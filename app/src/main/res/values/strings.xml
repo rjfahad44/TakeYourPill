@@ -1,0 +1,168 @@
+<resources translatable="false">
+    <string name="app_name">Take Your Pill</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="settings">Settings</string>
+    <string name="new_pill">Add pill</string>
+    <string name="edit">Edit</string>
+    <string name="details">Details</string>
+    <string name="pills">Pills</string>
+    <string name="alarm_settings">Highest priority reminding</string>
+    <string name="pill_item_transition_name">pill_item_%1$s</string>
+    <string name="pill_details_transition_name">pill_item_detail</string>
+    <string name="color">Color</string>
+    <string name="delete_only_pil">Only delete pill</string>
+    <string name="delete">Delete</string>
+    <string name="delete_pill_and_history">Delete pill and history</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_delete_history">Do you really want to do this?</string>
+    <string name="confirm_delete_history_description">This will delete the history for this pill</string>
+    <string name="confirm_delete_photo">Do you really want to remove the photo?</string>
+    <string name="confirm_delete_photo_description">This will remove the current photo from this pill</string>
+    <string name="confirm_exit_edit">Do you really want to exit?</string>
+    <string name="confirm_exit_edit_description">This will discard all your modifications</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="photo">Photo</string>
+    <string name="enter_field_name">Please enter a name</string>
+    <string name="edit_pill">Edit pill</string>
+    <string name="reminders">Reminders</string>
+    <string name="limit_to_x_days">Limit to number of days</string>
+    <string name="number_of_days">Number of days to limit to</string>
+    <string name="start_from_day">Start from day</string>
+    <string name="restore_after">Restore after number of days</string>
+    <string name="how_many_days_to_restore">How many days after which to restore</string>
+    <string name="num_of_cycles">Number of cycles</string>
+    <string name="add_reminder">Add reminder</string>
+    <string name="storage_perm_rationale">This app needs the storage permission to load a photo</string>
+    <string name="no_reminders_set">Please add at least one reminder</string>
+    <string name="add_photo">Add photo</string>
+    <string name="file_provider" translatable="false">ft.ltd.takeyourpill.fileprovider</string>
+    <string name="set_time_format">Set remind time (%1$s)</string>
+    <string name="pill_time_reminders_format">%1$s at %2$s</string>
+    <string name="save_reminder">Save reminder</string>
+    <string name="set_a_reminder">Set a reminder</string>
+    <string name="delete_pill">Delete pill</string>
+    <string name="set_amount_format">Set amount (%1$s)</string>
+    <string name="change_amount_format">Set amount to %1$s pill(s)</string>
+    <string name="reminder_text">%1$s: %2$s pill(s)</string>
+    <string name="it_is_time_to_take">It is time to take %1$s pill(s)!</string>
+    <string name="pill_taken_question">Have you taken %1$s pill(s) at %2$s?</string>
+
+    <plurals name="delay">
+        <item quantity="one">Delay by %1$d minute</item>
+        <item quantity="other">Delay by %1$d minutes</item>
+    </plurals>
+
+    <string name="two_reminders_same_time">There can only be one reminder with the same time. Please set a different time.</string>
+    <string name="nothing_to_see_here">Nothing to see here</string>
+    <string name="try_to_add_a_pill_first">Your pills will show up here.</string>
+
+    <string name="intro">Intro</string>
+    <string name="intro_welcome_description">This app will remind you about taking your pills. From now on, you should never forget it. You will be able to see your medication history, graphs and statistics.</string>
+    <string name="intro_new_pill">Start by adding a pill</string>
+    <string name="intro_new_pill_description">Click the \"Add Pill\" button, enter pill details, set a color, add an image and most importantly set its reminders.</string>
+    <string name="intro_reminder">Stop worrying about taking pills</string>
+    <string name="intro_reminder_description">The app will remind you so you can just forget about taking your pills and think about more important stuff.</string>
+    <string name="intro_history">See your medication history</string>
+    <string name="intro_history_description">In the \"History\" section you will be able to see statistics, graphs and your complete medication taking history including the pill reminded time, confirmed time and its amount.</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="saving">Saving…</string>
+    <string name="alert_style_summary">When a reminder is fired a persistent notification or a confirm screen will be shown (this settings does not apply to delayed reminders and only works for a single reminder at a time)</string>
+    <string name="settings_delay_summary">Chose how many minutes to delay when clicking the delay button in a notification</string>
+    <string name="settings_delay_by">Delay by</string>
+    <string name="settings_notification_options">Set notification options</string>
+    <string name="settings_notification_options_summary">Open android settings and set notification options like sound and priority for each pill</string>
+    <string name="settings_notification_options_summary_legacy">Open android settings and set notification options</string>
+    <string name="settings_remind_again_after">Remind again after</string>
+    <string name="settings_remind_again_after_summary">Chose how many minutes to remind after if you did not confirm taking the pill</string>
+    <string name="settings_remind_again">Remind until confirmed</string>
+    <string name="settings_remind_again_summary">Remind again if you did not confirm taking the pill</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="settings_about_application_summary">Information about this application</string>
+    <string name="settings_about_application">About this application</string>
+    <string name="made_by">Made by Mohammad Fahad Alam</string>
+    <string name="view_on_github">View source code on GitHub</string>
+    <string name="version">Version %1$s</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="mark_as_skipped">Mark as skipped</string>
+    <string name="mark_as_confirmed">Mark as confirmed</string>
+    <string name="change_confirm_time">Change confirm time</string>
+    <string name="error_opening_image">There was an error opening the image</string>
+    <string name="overview">Overview</string>
+    <string name="charts">Charts</string>
+    <string name="all_pills_chart">All reminders</string>
+    <string name="missed_pills">Missed reminders</string>
+    <string name="stat_overall">All pills</string>
+    <string name="stat_reminded">Reminded %1$d times</string>
+    <string name="stat_confirmed">Confirmed %1$d times</string>
+    <string name="stat_missed">Missed %1$d times</string>
+    <string name="no_history">Looks like you haven\'t received any reminder yet. Statistics and charts won\'t be available for you.</string>
+    <string name="confirmed_missed_pills">Confirmed ✕ Missed</string>
+    <string name="missed">Missed</string>
+    <string name="change_amount">Change amount</string>
+    <string name="limit_cycle_count">Limit cycle count</string>
+    <string name="cycle_count">Cycle count</string>
+    <string name="resume_after">Resume after</string>
+    <string name="day_limit">Day limit</string>
+
+    <string name="resume_after_format">Day %1$d out of %2$d day(s)</string>
+    <string name="day_limit_format">Day %1$d out of %2$d day(s)</string>
+    <string name="pill_options_indefinitely">Indefinitely</string>
+    <string name="pill_options_for_x_days">For X days</string>
+    <string name="pill_options_cycle">Cycle: X days active, Y days inactive</string>
+    <string name="intake_options">Intake options</string>
+    <string name="duration">Duration</string>
+    <string name="days_active">Days active</string>
+    <string name="days_inactive">Days inactive</string>
+    <string name="today_is_cycle_day">Today is cycle day</string>
+    <string name="inactive">Inactive</string>
+    <string name="error">Error</string>
+    <string name="intake">Intake</string>
+    <string name="cycle_today_info">If you set this pill after it\'s last reminder, the today cycle day will in fact start tomorrow. This is a normal behaviour and should be thought of when setting up a pill.</string>
+    <string name="cycle_x_days_info">If you set this pill after it\'s last reminder, the duration will start counting tomorrow. This is a normal behaviour and should be thought of when setting up a pill.</string>
+    <string name="cycle">Cycle</string>
+    <string name="intake_options_cycle">%1$d day(s) active, %2$d day(s) inactive, cycle day %3$d</string>
+    <string name="intake_options_x_days">Limited</string>
+    <string name="intake_options_x_days_text">Duration %1$d day(s), %2$d day(s) remaining</string>
+    <string name="used_graphics">Used graphics</string>
+    <string name="about_app_description">Take Your Pills is a medication tracker app with logbook keeping track on your pill history. You just need to check the history to make sure you\'ve taken that important dose.
+    \n\n<b>Key features:</b>\n
+
+\n<b>•</b> Pill reminder for all type of medications
+
+\n<b>•</b> Get reminders of your medications at exact time
+
+\n<b>•</b> Control dosage of your medications
+
+\n<b>•</b> Add image of your medications
+
+\n<b>•</b> Add Cycle or All Days of your medications dosage
+
+\n<b>•</b> Check on dashboard how much time is left until next pill
+
+\n<b>•</b> Easy to use – add new medication via one-page form
+
+\n<b>•</b> Simple configuration
+
+\n<b>•</b> Advanced sound setting
+
+\n<b>•</b> Theme setting
+
+    </string>
+    <string name="confirm_reminder">Confirm reminder</string>
+    <string name="add_test_data">Add test data</string>
+    <string name="app_theme">Application theme</string>
+    <string name="set_app_theme">Set the application theme</string>
+    <string name="theme_system">Follow system</string>
+    <string name="day">Day</string>
+    <string name="night">Night</string>
+    <string name="save">Save</string>
+    <string name="last_reminded">Last reminded</string>
+    <string name="other">Other</string>
+    <string name="todo">todo</string>
+
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    tools:context=".activity.AboutActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="52dp"
+            android:animateLayoutChanges="true"
+            android:clipChildren="false">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backBtn"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="@dimen/appbar_margin_vertical"
+                android:layout_marginTop="@dimen/appbar_margin_vertical"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                app:tint="?attr/colorOnSurface" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_marginTop="@dimen/appbar_margin_vertical"
+                android:background="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/AppTheme.Shape.Circle"
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                tools:ignore="ImageContrastCheck" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textAppName"
+                style="@style/AppTheme.Widget.Header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin_vertical_small"
+                android:gravity="center"
+                android:text="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textMadeBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin_vertical_little"
+                android:gravity="center"
+                android:text="@string/made_by"
+                android:textAppearance="@style/AppTheme.Text.BodyNormal"
+                app:layout_constraintEnd_toEndOf="@+id/textAppName"
+                app:layout_constraintStart_toStartOf="@+id/textAppName"
+                app:layout_constraintTop_toBottomOf="@+id/textAppName" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/googleAdsView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin_vertical_little"
+                android:backgroundTint="@android:color/transparent"
+                android:visibility="gone"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/admob_banner_ads_id"
+                app:layout_constraintEnd_toEndOf="@+id/textMadeBy"
+                app:layout_constraintStart_toStartOf="@+id/textMadeBy"
+                app:layout_constraintTop_toBottomOf="@+id/textMadeBy"
+                tools:visibility="visible" />
+
+
+            <View
+                android:id="@id/divider"
+                style="@style/AppTheme.Widget.Divider"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/googleAdsView" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/aboutTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/screen_margin_horizontal_small"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:isScrollContainer="true"
+                android:padding="@dimen/screen_margin_vertical"
+                android:paddingStart="@dimen/screen_margin_horizontal"
+                android:paddingEnd="@dimen/screen_margin_horizontal"
+                android:text="@string/about_app_description"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+            <com.ft.ltd.takeyourpill.ad_manager.adds_view.TemplateView
+                android:id="@+id/adsTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:gnt_template_type="@layout/gnt_medium_template_view"
+                app:layout_constraintEnd_toEndOf="@+id/aboutTextView"
+                app:layout_constraintStart_toStartOf="@+id/aboutTextView"
+                app:layout_constraintTop_toBottomOf="@+id/aboutTextView"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="@dimen/screen_margin_horizontal"
+            android:layout_marginVertical="@dimen/screen_margin_vertical"
+            android:layout_marginTop="@dimen/screen_margin_vertical_little"
+            android:gravity="center|center_vertical"
+            android:text="@string/version"
+            android:textAppearance="@style/AppTheme.Text.BodySecondary" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.core.widget.NestedScrollView>

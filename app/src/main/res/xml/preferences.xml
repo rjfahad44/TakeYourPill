@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/reminders">
+        <!-- TODO Decide if I want to enable this -->
+        <SwitchPreferenceCompat
+            app:icon="@drawable/ic_vibration"
+            app:isPreferenceVisible="true"
+            app:key="alertStyleKey"
+            app:summary="@string/alert_style_summary"
+            app:title="@string/alarm_settings" />
+        <SeekBarPreference
+            app:defaultValue="30"
+            app:icon="@drawable/ic_delay"
+            app:key="buttonDelayKey"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:summary="@string/settings_delay_summary"
+            app:title="@string/settings_delay_by" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:icon="@drawable/ic_alarm"
+            app:key="remindAgainKey"
+            app:summary="@string/settings_remind_again_summary"
+            app:title="@string/settings_remind_again" />
+        <SeekBarPreference
+            app:defaultValue="10"
+            app:dependency="remindAgainKey"
+            app:key="remindAgainAfterKey"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:summary="@string/settings_remind_again_after_summary"
+            app:title="@string/settings_remind_again_after" />
+        <Preference
+            app:icon="@drawable/ic_notifications"
+            app:key="notificationOptions"
+            app:summary="@string/settings_notification_options_summary"
+            app:title="@string/settings_notification_options" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/miscellaneous">
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/pref_theme"
+            app:entryValues="@array/pref_theme_values"
+            app:icon="@drawable/ic_paint"
+            app:key="themeKey"
+            app:summary="@string/set_app_theme"
+            app:title="@string/app_theme" />
+        <Preference
+            app:icon="@drawable/ic_info"
+            app:key="showAbout"
+            app:summary="@string/settings_about_application_summary"
+            app:title="@string/settings_about_application" />
+        <Preference
+            app:icon="@drawable/ic_pill"
+            app:key="addTestData"
+            app:title="@string/add_test_data" />
+    </PreferenceCategory>
+</PreferenceScreen>
