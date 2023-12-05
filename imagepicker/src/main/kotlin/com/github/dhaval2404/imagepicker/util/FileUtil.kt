@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.os.Environment
 import android.os.StatFs
 import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -43,7 +44,12 @@ object FileUtil {
             val file = File(storageDir, imageFileName)
 
             // Create empty file
-            file.createNewFile()
+            //file.createNewFile()
+            val fileOutputStream = FileOutputStream(file)
+            fileOutputStream.write(imageFileName.toByteArray())
+
+            // Close the output stream
+            fileOutputStream.close()
 
             return file
         } catch (ex: IOException) {

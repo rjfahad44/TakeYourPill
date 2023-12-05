@@ -105,7 +105,9 @@ class CropProvider(activity: ImagePickerActivity) : BaseProvider(activity) {
      */
     @Throws(IOException::class)
     private fun cropImage(file: File) {
+        Log.e(TAG, "file : ${file.absolutePath}")
         val uri = Uri.fromFile(file)
+        Log.e(TAG, "file : ${file.absolutePath}")
         val extension = FileUriUtils.getImageExtension(uri)
         mCropImageFile = FileUtil.getImageFile(dir = mFileDir, extension = extension)
 
