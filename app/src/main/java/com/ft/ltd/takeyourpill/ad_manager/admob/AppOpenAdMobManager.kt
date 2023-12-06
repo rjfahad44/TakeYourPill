@@ -5,9 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -140,8 +138,6 @@ class AppOpenAdMobManager (private var myApplication: Application) : LifecycleOb
     private fun isAdAvailable(): Boolean {
         return appOpenAd != null && wasLoadTimeLessThanNHoursAgo(4)
     }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onMoveToForeground() {
         // Show the ad (if available) when the app moves to foreground.
         currentActivity?.let {

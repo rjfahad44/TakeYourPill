@@ -12,6 +12,8 @@ import com.ft.ltd.takeyourpill.model.Reminder
 import com.ft.ltd.takeyourpill.reminder.NotificationManager
 import com.ft.ltd.takeyourpill.reminder.ReminderManager
 import com.ft.ltd.takeyourpill.repository.PillRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -24,12 +26,12 @@ class EditViewModel @Inject constructor(
         private val pillRepository: PillRepository
 ) : ViewModel() {
 
-    fun addPill(pill: Pill, applicationContext: Context) = GlobalScope.launch(Dispatchers.IO) {
+    fun addPill(pill: Pill, applicationContext: Context) = CoroutineScope(Dispatchers.IO).launch {
         val newPill = pillRepository.insertPillReturn(pill)
         setReminding(newPill, applicationContext)
     }
 
-    fun updatePill(pill: Pill, applicationContext: Context) = GlobalScope.launch(Dispatchers.IO) {
+    fun updatePill(pill: Pill, applicationContext: Context) = CoroutineScope(Dispatchers.IO).launch {
         val newPill = pillRepository.updatePillReturn(pill)
         setReminding(newPill, applicationContext)
     }

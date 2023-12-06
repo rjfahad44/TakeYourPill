@@ -577,7 +577,7 @@ public class UCropFragment extends Fragment {
         return new UCropResult(UCrop.RESULT_ERROR, new Intent().putExtra(UCrop.EXTRA_ERROR, throwable));
     }
 
-    public class UCropResult {
+    public static class UCropResult {
 
         public int mResultCode;
         public Intent mResultData;

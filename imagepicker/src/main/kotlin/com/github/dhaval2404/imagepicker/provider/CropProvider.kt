@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.FileProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.ImagePickerActivity
 import com.github.dhaval2404.imagepicker.R
@@ -106,7 +107,8 @@ class CropProvider(activity: ImagePickerActivity) : BaseProvider(activity) {
     @Throws(IOException::class)
     private fun cropImage(file: File) {
         Log.e(TAG, "file : ${file.absolutePath}")
-        val uri = Uri.fromFile(file)
+        //val uri = Uri.fromFile(file)
+        val uri = FileProvider.getUriForFile(this, "com.ft.ltd.takeyourpill.fileprovider", file)
         Log.e(TAG, "file : ${file.absolutePath}")
         val extension = FileUriUtils.getImageExtension(uri)
         mCropImageFile = FileUtil.getImageFile(dir = mFileDir, extension = extension)
@@ -152,7 +154,7 @@ class CropProvider(activity: ImagePickerActivity) : BaseProvider(activity) {
      * @param resultCode For success it should be {@link Activity#RESULT_OK}
      * @param data Result Intent
      */
-    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == UCrop.REQUEST_CROP) {
             when (resultCode) {
                 Activity.RESULT_OK -> {

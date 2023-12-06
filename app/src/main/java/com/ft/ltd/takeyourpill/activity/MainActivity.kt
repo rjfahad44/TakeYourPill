@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
                 Snackbar.make(binding.root, "please on \"Notifications\"", 9000
-                ).setAction("Settings") { view: View? ->
+                ).setAction("Settings") {
                     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     val uri = Uri.fromParts("package", packageName, null)

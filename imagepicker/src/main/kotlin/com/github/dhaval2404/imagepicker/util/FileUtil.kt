@@ -44,12 +44,12 @@ object FileUtil {
             val file = File(storageDir, imageFileName)
 
             // Create empty file
-            //file.createNewFile()
-            val fileOutputStream = FileOutputStream(file)
-            fileOutputStream.write(imageFileName.toByteArray())
-
-            // Close the output stream
-            fileOutputStream.close()
+            file.createNewFile()
+//            val fileOutputStream = FileOutputStream(file)
+//            fileOutputStream.write(imageFileName.toByteArray())
+//
+//            // Close the output stream
+//            fileOutputStream.close()
 
             return file
         } catch (ex: IOException) {

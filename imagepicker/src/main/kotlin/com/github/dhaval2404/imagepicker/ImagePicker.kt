@@ -365,13 +365,13 @@ open class ImagePicker {
             try {
 
                 val contract = object : ActivityResultContract<Unit, Pair<Int, Intent?>>() {
-                    override fun createIntent(context: Context, nothing: Unit) =
+                    override fun createIntent(context: Context, input: Unit) =
                         Intent(activity, ImagePickerActivity::class.java).apply {
                             putExtras(getBundle())
                         }
 
-                    override fun parseResult(resultCode: Int, result: Intent?): Pair<Int, Intent?> {
-                        return Pair(resultCode, result)
+                    override fun parseResult(resultCode: Int, intent: Intent?): Pair<Int, Intent?> {
+                        return Pair(resultCode, intent)
                     }
                 }
                 if (fragment != null) {

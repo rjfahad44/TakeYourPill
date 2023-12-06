@@ -26,7 +26,7 @@ public class RotationGestureDetector {
         return mAngle;
     }
 
-    public boolean onTouchEvent(@NonNull MotionEvent event) {
+    public void onTouchEvent(@NonNull MotionEvent event) {
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 sX = event.getX();
@@ -74,17 +74,16 @@ public class RotationGestureDetector {
                 mPointerIndex2 = INVALID_POINTER_INDEX;
                 break;
         }
-        return true;
     }
 
-    private float calculateAngleBetweenLines(float fx1, float fy1, float fx2, float fy2,
-                                             float sx1, float sy1, float sx2, float sy2) {
-        return calculateAngleDelta(
+    private void calculateAngleBetweenLines(float fx1, float fy1, float fx2, float fy2,
+                                            float sx1, float sy1, float sx2, float sy2) {
+        calculateAngleDelta(
                 (float) Math.toDegrees((float) Math.atan2((fy1 - fy2), (fx1 - fx2))),
                 (float) Math.toDegrees((float) Math.atan2((sy1 - sy2), (sx1 - sx2))));
     }
 
-    private float calculateAngleDelta(float angleFrom, float angleTo) {
+    private void calculateAngleDelta(float angleFrom, float angleTo) {
         mAngle = angleTo % 360.0f - angleFrom % 360.0f;
 
         if (mAngle < -180.0f) {
@@ -93,20 +92,18 @@ public class RotationGestureDetector {
             mAngle -= 360.0f;
         }
 
-        return mAngle;
     }
 
     public static class SimpleOnRotationGestureListener implements OnRotationGestureListener {
 
         @Override
-        public boolean onRotation(RotationGestureDetector rotationDetector) {
-            return false;
+        public void onRotation(RotationGestureDetector rotationDetector) {
         }
     }
 
     public interface OnRotationGestureListener {
 
-        boolean onRotation(RotationGestureDetector rotationDetector);
+        void onRotation(RotationGestureDetector rotationDetector);
     }
 
 }

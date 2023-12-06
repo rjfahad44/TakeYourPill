@@ -3,8 +3,10 @@ package com.github.dhaval2404.imagepicker.provider
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat.requestPermissions
 import com.github.dhaval2404.imagepicker.ImagePicker
@@ -31,10 +33,16 @@ class GalleryProvider(activity: ImagePickerActivity) :
          * to crop or compress image write permission is also required. as both permission is in
          * same group, we have used write permission here.
          */
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+        val REQUIRED_PERMISSIONS = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.CAMERA)
+        }else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+        }else{
+            arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+        }
 
-        private const val GALLERY_INTENT_REQ_CODE = 4261
-        private const val PERMISSION_INTENT_REQ_CODE = 4262
+        const val GALLERY_INTENT_REQ_CODE = 4261
+        const val PERMISSION_INTENT_REQ_CODE = 4262
     }
 
     // Mime types restrictions for gallery. By default all mime types are valid

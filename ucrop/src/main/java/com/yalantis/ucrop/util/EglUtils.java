@@ -86,7 +86,6 @@ public class EglUtils {
         return maxSize[0];
     }
 
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private static int getMaxTextureEgl10() {
         EGL10 egl = (EGL10) javax.microedition.khronos.egl.EGLContext.getEGL();
 

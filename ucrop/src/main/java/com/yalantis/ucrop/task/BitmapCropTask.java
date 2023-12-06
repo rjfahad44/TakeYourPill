@@ -128,7 +128,7 @@ public class BitmapCropTask extends AsyncTask<Void, Void, Throwable> {
         return resizeScale;
     }
 
-    private boolean crop(float resizeScale) throws IOException {
+    private void crop(float resizeScale) throws IOException {
         ExifInterface originalExif = new ExifInterface(mImageInputPath);
 
         cropOffsetX = Math.round((mCropRect.left - mCurrentImageRect.left) / mCurrentScale);
@@ -147,10 +147,8 @@ public class BitmapCropTask extends AsyncTask<Void, Void, Throwable> {
             if (cropped && mCompressFormat.equals(Bitmap.CompressFormat.JPEG)) {
                 ImageHeaderParser.copyExif(originalExif, mCroppedImageWidth, mCroppedImageHeight, mImageOutputPath);
             }
-            return cropped;
         } else {
             FileUtils.copyFile(mImageInputPath, mImageOutputPath);
-            return false;
         }
     }
 

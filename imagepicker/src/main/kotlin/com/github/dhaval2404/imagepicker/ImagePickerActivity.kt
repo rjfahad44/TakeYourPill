@@ -4,14 +4,17 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.constant.ImageProvider
 import com.github.dhaval2404.imagepicker.provider.CameraProvider
 import com.github.dhaval2404.imagepicker.provider.CompressionProvider
 import com.github.dhaval2404.imagepicker.provider.CropProvider
 import com.github.dhaval2404.imagepicker.provider.GalleryProvider
+import com.github.dhaval2404.imagepicker.provider.GalleryProvider.Companion.REQUIRED_PERMISSIONS
 import java.io.File
 
 /**
@@ -39,6 +42,31 @@ class ImagePickerActivity : AppCompatActivity() {
         }
     }
 
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { granted ->
+        if (granted.all { it.value }) {
+            //mCameraProvider?.onRequestPermissionsResult()
+           //mGalleryProvider?.onRequestPermissionsResult()
+        } else {
+            //"permission denied".toast(requireContext())
+        }
+    }
+
+    fun requestPermission(){
+        requestPermissionLauncher.launch(REQUIRED_PERMISSIONS)
+    }
+
+    private val imageChooserContract = registerForActivityResult(ActivityResultContracts.GetContent()) { imageUri ->
+        if (imageUri != null) {
+            //mGalleryProvider?.onActivityResult(imageUri)
+            //mCropProvider.onActivityResult(GALLERY_INTENT_REQ_CODE, Activity.RESULT_OK, imageUri)
+            // imageUri now contains URI to selected image
+        }
+    }
+
+    fun openImageChooser() {
+        imageChooserContract.launch("image/*")
+    }
+
     private var mGalleryProvider: GalleryProvider? = null
     private var mCameraProvider: CameraProvider? = null
     private lateinit var mCropProvider: CropProvider
@@ -61,7 +89,11 @@ class ImagePickerActivity : AppCompatActivity() {
      */
     private fun restoreInstanceState(savedInstanceState: Bundle?) {
         if (savedInstanceState != null) {
-            mImageFile = savedInstanceState.getSerializable(STATE_IMAGE_FILE) as File?
+            mImageFile = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                savedInstanceState.getSerializable(STATE_IMAGE_FILE, File::class.java)
+            }else{
+                savedInstanceState.getSerializable(STATE_IMAGE_FILE) as File?
+            }
         }
     }
 
@@ -87,8 +119,11 @@ class ImagePickerActivity : AppCompatActivity() {
         mCompressionProvider = CompressionProvider(this)
 
         // Retrieve Image Provider
-        val provider: ImageProvider? =
+        val provider: ImageProvider? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            intent?.getSerializableExtra(ImagePicker.EXTRA_IMAGE_PROVIDER, ImageProvider::class.java)
+        }else {
             intent?.getSerializableExtra(ImagePicker.EXTRA_IMAGE_PROVIDER) as ImageProvider?
+        }
 
         // Create Gallery/Camera Provider
         when (provider) {
@@ -138,6 +173,7 @@ class ImagePickerActivity : AppCompatActivity() {
      * Handle Activity Back Press
      */
     override fun onBackPressed() {
+        super.onBackPressed()
         setResultCancel()
     }
 

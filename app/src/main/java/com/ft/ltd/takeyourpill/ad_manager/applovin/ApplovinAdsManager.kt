@@ -73,17 +73,6 @@ class ApplovinAdsManager(private val context: Context) :
 
     }
 
-    fun interstitialWithCount(playing: Boolean) {
-        if (!prefs.isAdsActive) {
-            if (interstitialAdsCount == 3) {
-                showInterstitialAd()
-                resumeInterstitialAd()
-            }
-            Log.i(TAG, "interstitialWithCount: $interstitialAdsCount")
-            interstitialAdsCount++
-        }
-    }
-
     public fun loadNativeAds(onAdLoadedFunc: NativeAdCallback){
         loadNativeAds(null,onAdLoadedFunc)
     }

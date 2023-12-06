@@ -34,6 +34,7 @@ import com.ft.ltd.takeyourpill.utils.Builders
 import com.ft.ltd.takeyourpill.utils.Constants
 import com.ft.ltd.takeyourpill.viewmodel.EditViewModel
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.github.dhaval2404.imagepicker.provider.GalleryProvider.Companion.REQUIRED_PERMISSIONS
 import pub.devrel.easypermissions.EasyPermissions
 
 @AndroidEntryPoint
@@ -113,6 +114,7 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -267,47 +269,19 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
     }
 
     private fun onPickImage() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-            if (EasyPermissions.hasPermissions(
-                    requireContext(),
-                    Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.CAMERA
-                )
-            ) {
-                ImagePicker.with(this)
-                    .compress(Constants.IMAGE_MAX_SIZE)
-                    .maxResultSize(Constants.IMAGE_MAX_WIDTH, Constants.IMAGE_MAX_HEIGHT)
-                    .crop()
-                    .start()
-            } else {
-                EasyPermissions.requestPermissions(
-                    this,
-                    getString(R.string.storage_perm_rationale),
-                    Constants.READ_EXTERNAL_STORAGE_PERMISSION_CODE,
-                    Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.CAMERA
-                )
-            }
-        }else{
-            if (EasyPermissions.hasPermissions(
-                    requireContext(),
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA
-                )
-            ) {
-                ImagePicker.with(this)
-                    .compress(Constants.IMAGE_MAX_SIZE)
-                    .maxResultSize(Constants.IMAGE_MAX_WIDTH, Constants.IMAGE_MAX_HEIGHT)
-                    .crop()
-                    .start()
-            } else {
-                EasyPermissions.requestPermissions(
-                    this,
-                    getString(R.string.storage_perm_rationale),
-                    Constants.READ_EXTERNAL_STORAGE_PERMISSION_CODE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA
-                )
-            }
+        if (EasyPermissions.hasPermissions(requireContext(), *REQUIRED_PERMISSIONS)) {
+            ImagePicker.with(this)
+                .compress(Constants.IMAGE_MAX_SIZE)
+                .maxResultSize(Constants.IMAGE_MAX_WIDTH, Constants.IMAGE_MAX_HEIGHT)
+                .crop()
+                .start()
+        } else {
+            EasyPermissions.requestPermissions(
+                this,
+                getString(R.string.storage_perm_rationale),
+                Constants.READ_EXTERNAL_STORAGE_PERMISSION_CODE,
+                *REQUIRED_PERMISSIONS
+            )
         }
     }
 

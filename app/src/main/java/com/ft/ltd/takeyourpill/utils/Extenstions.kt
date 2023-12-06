@@ -231,6 +231,7 @@ fun NavController.navigateSafe(
     }
 }
 
+@OptIn(DelicateCoroutinesApi::class)
 fun BroadcastReceiver.goAsync(
     coroutineScope: CoroutineScope = GlobalScope,
     coroutineDispatcher: CoroutineDispatcher = Dispatchers.Default,

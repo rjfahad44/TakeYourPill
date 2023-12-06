@@ -39,7 +39,7 @@
     <string name="storage_perm_rationale">This app needs the storage permission to load a photo</string>
     <string name="no_reminders_set">Please add at least one reminder</string>
     <string name="add_photo">Add photo</string>
-    <string name="file_provider" translatable="false">ft.ltd.takeyourpill.fileprovider</string>
+    <string name="file_provider" translatable="false">com.ft.ltd.takeyourpill.fileprovider</string>
     <string name="set_time_format">Set remind time (%1$s)</string>
     <string name="pill_time_reminders_format">%1$s at %2$s</string>
     <string name="save_reminder">Save reminder</string>

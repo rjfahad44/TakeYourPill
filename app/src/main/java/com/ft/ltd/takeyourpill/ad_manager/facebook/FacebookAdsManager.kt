@@ -142,7 +142,7 @@ class FacebookAdsManager(private val context: Context):
                         }
 
                         override fun onAdLoaded(p0: Ad?) {
-                            if (nativeAd == null || nativeAd != p0) {
+                            if (nativeAd != p0) {
                                 return
                             }
                             // Inflate Native Ad into Container
@@ -185,7 +185,7 @@ class FacebookAdsManager(private val context: Context):
                         }
 
                         override fun onAdLoaded(p0: Ad?) {
-                            if (nativeAd == null || nativeAd != p0) {
+                            if (nativeAd != p0) {
                                 return
                             }
 
@@ -221,17 +221,6 @@ class FacebookAdsManager(private val context: Context):
             System.gc()
         }
         interstitialAdsCount = 1
-    }
-
-    fun interstitialWithCount(isPlaying: Boolean) {
-
-        if (!prefs.isAdsActive) {
-            if ((interstitialAdsCount == 1) || (interstitialAdsCount % 2 == 0)) {
-                showInterstitialAd()
-            }
-            interstitialAdsCount++
-        }
-
     }
     companion object{
         private var interstitialAdsCount:Int = 1

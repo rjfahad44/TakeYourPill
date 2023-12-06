@@ -1,5 +1,6 @@
 package com.yalantis.ucrop.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
@@ -74,6 +75,7 @@ public class GestureCropImageView extends CropImageView {
      * If there are more than 2 fingers - update focal point coordinates.
      * Pass the event to the gesture detectors if those are enabled.
      */
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if ((event.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
@@ -152,9 +154,8 @@ public class GestureCropImageView extends CropImageView {
     private class RotateListener extends RotationGestureDetector.SimpleOnRotationGestureListener {
 
         @Override
-        public boolean onRotation(RotationGestureDetector rotationDetector) {
+        public void onRotation(RotationGestureDetector rotationDetector) {
             postRotate(rotationDetector.getAngle(), mMidPntX, mMidPntY);
-            return true;
         }
 
     }
