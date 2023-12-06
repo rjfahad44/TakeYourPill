@@ -1,9 +1,8 @@
 package com.ft.ltd.takeyourpill
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
-import com.ft.ltd.takeyourpill.BuildConfig
 import com.ft.ltd.takeyourpill.ad_manager.admob.AppOpenAdMobManager
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp

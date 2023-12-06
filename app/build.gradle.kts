@@ -132,6 +132,12 @@ dependencies {
     /*--------------------------------------------------------------------------------------------*/
 
 
+    // In App Update
+    implementation("com.google.android.play:app-update:2.1.0")
+    implementation("com.google.android.play:app-update-ktx:2.1.0")
+
+
+    // viewModel() And activityViewModel()
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.viewpager2:viewpager2:1.0.0")

@@ -9,8 +9,8 @@
         android:shortcutDisabledMessage="@string/new_pill">
         <intent
             android:action="eu.vojtechh.takeyourpill.ADD_NEW_PILL"
-            android:targetPackage="ft.ltd.takeyourpill"
-            android:targetClass="ft.ltd.takeyourpill.activity.MainActivity"
+            android:targetPackage="com.ft.ltd.takeyourpill"
+            android:targetClass="com.ft.ltd.takeyourpill.activity.MainActivity"
             android:data="eu.vojtechh.takeyourpill://add_new_pill" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
@@ -23,8 +23,8 @@
         android:shortcutDisabledMessage="@string/history">
         <intent
             android:action="eu.vojtechh.takeyourpill.HISTORY"
-            android:targetPackage="ft.ltd.takeyourpill"
-            android:targetClass="ft.ltd.takeyourpill.activity.MainActivity"
+            android:targetPackage="com.ft.ltd.takeyourpill"
+            android:targetClass="com.ft.ltd.takeyourpill.activity.MainActivity"
             android:data="eu.vojtechh.takeyourpill://history" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
