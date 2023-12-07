@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.NavDeepLinkBuilder
 import com.ft.ltd.takeyourpill.R
+import com.ft.ltd.takeyourpill.activity.MainActivity
 import com.ft.ltd.takeyourpill.utils.Prefs
 import com.ft.ltd.takeyourpill.utils.Constants
 import com.ft.ltd.takeyourpill.model.Pill
@@ -23,6 +24,7 @@ object ReminderUtil {
         args.putLong(Constants.INTENT_EXTRA_PILL_ID, pillId)
         args.putBoolean(Constants.INTENT_EXTRA_LAUNCHED_FROM_NOTIFICATION, true)
         return NavDeepLinkBuilder(context)
+            .setComponentName(MainActivity::class.java)
             .setGraph(R.navigation.navigation_graph)
             .setDestination(R.id.details)
             .setArguments(args)

@@ -66,8 +66,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
         postponeEnterTransition()
 
-        launchedFromNotification =
-            requireArguments().getBoolean(Constants.INTENT_EXTRA_LAUNCHED_FROM_NOTIFICATION, false)
+        launchedFromNotification = requireArguments().getBoolean(Constants.INTENT_EXTRA_LAUNCHED_FROM_NOTIFICATION, false)
 
         var pillId = requireArguments().getLong(Constants.INTENT_EXTRA_PILL_ID, -1L)
         if (pillId == -1L) pillId = args.pillId

@@ -20,7 +20,7 @@ class Prefs @Inject constructor(val context: Context)
         set(value) = preferences.edit().putBoolean(::isAdsActive.name, value).apply()
 
     var alertStyle: Boolean
-        get() = preferences.getBoolean(::alertStyle.name, false)
+        get() = preferences.getBoolean(::alertStyle.name, true)
         set(value) = preferences.edit().putBoolean(::alertStyle.name, value).apply()
 
     var remindAgain: Boolean

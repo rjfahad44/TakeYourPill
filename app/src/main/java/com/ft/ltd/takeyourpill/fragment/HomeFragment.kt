@@ -37,7 +37,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding by viewBinding(FragmentHomeBinding::bind)
 
     private lateinit var appAdapter: AppRecyclerAdapter
-    //lateinit var adMobAdsManager: AdMobAdsManager
 
     private var isFirstScrollUp = true
     private var shouldShowSkeleton = true

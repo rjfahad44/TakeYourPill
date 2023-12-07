@@ -66,8 +66,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         Utils.setTheme(prefs.theme)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
         navController.addOnDestinationChangedListener { _, destination, _ ->

@@ -70,11 +70,11 @@ object NotificationManager {
 
         // set notification style to BigPicture if the pill has a photo
         bitmap?.let {
-            builder.setLargeIcon(bitmap)
+            builder.setLargeIcon(it)
             builder.setStyle(
                 NotificationCompat.BigPictureStyle()
                     .bigPicture(it)
-                    //.bigLargeIcon(null)
+                    .bigLargeIcon(it)
             )
         }
         return builder.build()
