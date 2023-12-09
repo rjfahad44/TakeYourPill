@@ -99,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin_horizontal"
                 android:layout_marginTop="@dimen/screen_margin_vertical_small"
+                android:contentDescription="@string/app_name"
                 android:layout_marginBottom="@dimen/screen_margin_vertical" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -127,6 +128,7 @@
                 android:layout_marginHorizontal="@dimen/screen_margin_horizontal"
                 android:layout_marginTop="@dimen/screen_margin_vertical_small"
                 android:text="@string/add_reminder"
+                android:contentDescription="@string/app_name"
                 android:textAppearance="@style/AppTheme.Text.ButtonSmall"
                 app:icon="@drawable/ic_add_alert"
                 app:strokeColor="@color/colorPrimary" />
@@ -144,6 +146,7 @@
                 android:id="@+id/pillOptionsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
                 android:layout_marginTop="@dimen/screen_margin_vertical_small" />
 
         </LinearLayout>
@@ -157,6 +160,7 @@
         android:layout_margin="@dimen/fab_margins"
         app:icon="@drawable/ic_save"
         android:text="@string/save"
+        android:contentDescription="@string/app_name"
         app:tint="@android:color/white"
         style="@style/AppTheme.Widgets.FloatingActionButton" />
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import androidx.activity.addCallback
@@ -69,6 +70,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         launchedFromNotification = requireArguments().getBoolean(Constants.INTENT_EXTRA_LAUNCHED_FROM_NOTIFICATION, false)
 
         var pillId = requireArguments().getLong(Constants.INTENT_EXTRA_PILL_ID, -1L)
+        Log.d("PILL_ID", "pill id : $pillId")
         if (pillId == -1L) pillId = args.pillId
 
         model.getPillById(pillId).observe(viewLifecycleOwner) { pill ->

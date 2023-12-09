@@ -9,6 +9,7 @@
     android:layout_marginBottom="@dimen/screen_margin_vertical"
     android:animateLayoutChanges="true"
     android:clickable="true"
+    android:contentDescription="@string/app_name"
     android:clipChildren="true"
     android:clipToPadding="false"
     android:focusable="true"
@@ -82,10 +83,10 @@
             android:layout_width="0dp"
             android:layout_height="194dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pillHeader"
-            tools:ignore="ContentDescription"
             tools:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -201,8 +202,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                app:cornerRadius="20dp"
+                android:backgroundTint="@color/colorBlue"
+                android:contentDescription="@string/app_name"
                 android:text="@string/confirm"
                 app:textAllCaps="false"
+                android:textColor="?colorSurface"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textQuestionTake" />
 

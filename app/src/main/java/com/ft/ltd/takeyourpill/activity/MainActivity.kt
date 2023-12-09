@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.bottomNavigation.setOnItemSelectedListener {
-            toast("addOnLayoutChangeListener")
             model.scrollUp()
             true
         }

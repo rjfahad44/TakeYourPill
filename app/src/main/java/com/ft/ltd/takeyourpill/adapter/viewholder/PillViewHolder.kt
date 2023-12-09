@@ -1,6 +1,7 @@
 package com.ft.ltd.takeyourpill.adapter.viewholder
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -43,7 +44,7 @@ class PillViewHolder(
 
         setupReminders(pill.reminders)
         setupIntake(pill, context)
-        setupConfirm(pill.closeHistory, context)
+        setupConfirm(pill, context)
     }
 
     private fun setupReminders(reminders: List<Reminder>) = binding.chipsLayout.run {
@@ -116,10 +117,11 @@ class PillViewHolder(
         divider.isVisible = visible
     }
 
-    private fun setupConfirm(latestHistory: History?, context: Context) = binding.run {
+    private fun setupConfirm(pill: Pill?, context: Context) = binding.run {
         pillConfirm.isVisible = false
-        latestHistory?.let { history ->
+        pill?.closeHistory?.let { history ->
             pillConfirm.isVisible = true
+            buttonTaken.backgroundTintList = ColorStateList.valueOf(pill.colorResource(context))
             textQuestionTake.text = binding.root.context.getString(
                 R.string.pill_taken_question,
                 history.amount,

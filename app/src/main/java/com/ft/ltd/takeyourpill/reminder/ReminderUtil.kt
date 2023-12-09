@@ -100,7 +100,7 @@ object ReminderUtil {
         }
 
     fun createReminderNotification(context: Context, pill: Pill, reminder: Reminder, prefs: Prefs) {
-        Timber.d("Creating reminder notification")
+        Timber.d("Creating reminder notification, PillId : ${pill.id}")
         NotificationManager.showNotification(
             context,
             title = pill.name,
