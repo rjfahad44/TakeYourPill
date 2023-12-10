@@ -86,7 +86,7 @@
     <string name="settings_about_application">About this application</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="about_privacy_policy_summary">About this application privacy-policy</string>
-    <string name="privacy_policy_url">http://sites.google.com/view/take-your-pill-privacy-policy</string>
+    <string name="privacy_policy_url">https://github.com/rjfahad44/TYP_Privacy_Policy/blob/main/README.md</string>
     <!--https://github.com/rjfahad44/TYP_Privacy_Policy-->
     <!--https://sites.google.com/view/take-your-pill-privacy-policy-->
     <string name="made_by">Made by Mohammad Fahad Alam</string>
