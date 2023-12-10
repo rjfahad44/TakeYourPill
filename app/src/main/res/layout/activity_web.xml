@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.WebActivity">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/toolbarTitle"
+            android:layout_alignBottom="@id/toolbarTitle"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/app_name"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_back" />
+
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            app:autoSizeMaxTextSize="20sp"
+            app:autoSizeMinTextSize="18sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            tools:text="Title" />
+
+
+        <ProgressBar
+            android:id="@+id/mainProgress"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:indeterminateDrawable="@drawable/home_progress"
+            android:progressTint="@color/colorPrimary"
+            android:contentDescription="@string/app_name" />
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/toolbarTitle" />
+
+</RelativeLayout>

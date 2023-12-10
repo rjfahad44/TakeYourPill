@@ -60,13 +60,14 @@ object NotificationManager {
                 )
             )
 
-        if (prefs.alertStyle) {
-            Timber.d("Using fullscreen intent")
-            builder.setFullScreenIntent(fullscreenPendingIntent, true)
-            builder.setCategory(NotificationCompat.CATEGORY_CALL)
-        } else {
-            builder.setContentIntent(pendingIntent)
-        }
+        //TODO("Here some crash this time now release, but next time fixed this issues")//
+//        if (prefs.alertStyle) {
+//            Timber.d("Using fullscreen intent")
+//            builder.setFullScreenIntent(fullscreenPendingIntent, true)
+//            builder.setCategory(NotificationCompat.CATEGORY_CALL)
+//        } else {
+//            builder.setContentIntent(pendingIntent)
+//        }
 
         // set notification style to BigPicture if the pill has a photo
         bitmap?.let {

@@ -9,9 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.ft.ltd.takeyourpill.BuildConfig
 import dagger.hilt.android.AndroidEntryPoint
 import com.ft.ltd.takeyourpill.R
 import com.ft.ltd.takeyourpill.activity.AboutActivity
+import com.ft.ltd.takeyourpill.activity.WebActivity
+import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.TITLE
+import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.URL
 import com.ft.ltd.takeyourpill.utils.Prefs
 import com.ft.ltd.takeyourpill.utils.Utils
 import com.ft.ltd.takeyourpill.viewmodel.PreferencesViewModel
@@ -21,6 +25,7 @@ import javax.inject.Inject
 class PreferencesFragment : PreferenceFragmentCompat() {
 
     private val model: PreferencesViewModel by viewModels()
+
     @Inject
     lateinit var prefs: Prefs
 
@@ -64,9 +69,15 @@ class PreferencesFragment : PreferenceFragmentCompat() {
             true
         }
 
-        // Uncomment after dlouhodobka
-        // findPreference<Preference>("addTestData")?.isVisible = BuildConfig.DEBUG
+        findPreference<Preference>("privacyPolicy")?.setOnPreferenceClickListener {
+            val intent = Intent(requireActivity(), WebActivity::class.java)
+            intent.putExtra(TITLE, requireContext().getString(R.string.privacy_policy))
+            intent.putExtra(URL, requireContext().getString(R.string.privacy_policy_url))
+            startActivity(intent)
+            true
+        }
 
+        findPreference<Preference>("addTestData")?.isVisible = BuildConfig.DEBUG
         findPreference<Preference>("addTestData")?.setOnPreferenceClickListener {
             model.addTestData(requireContext())
             true

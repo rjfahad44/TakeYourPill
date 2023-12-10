@@ -19,8 +19,8 @@ android {
         applicationId = "com.ft.ltd.takeyourpill"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "v1.0"
+        versionCode = 2
+        versionName = "v1.1"
 
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
