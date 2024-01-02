@@ -19,7 +19,7 @@ android {
         applicationId = "com.ft.ltd.takeyourpill"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2
+        versionCode = 4
         versionName = "v1.1"
 
         vectorDrawables.useSupportLibrary = true
@@ -39,15 +39,15 @@ android {
             resValue("string", "admob_ads_id", "ca-app-pub-1858354192090396~4641049638")
             resValue("string", "admob_banner_ads_id", "ca-app-pub-1858354192090396/1168708485")
             resValue("string", "admob_interstitial_ads_id", "ca-app-pub-1858354192090396/7513242092")
-            resValue("string", "admob_video_ads_id", "ca-app-pub-7283749387189654/8720358198")
+            resValue("string", "admob_video_ads_id", "")
             resValue("string", "admob_open_ads_id", "ca-app-pub-1858354192090396/1372760605")
             resValue("string", "admob_native_ads_id", "ca-app-pub-1858354192090396/7756784673")
             resValue("string", "admob_reward_ads_id", "ca-app-pub-1858354192090396/8676535559")
 
-            resValue("string", "facebook_banner_ads_id", "220265255850830_400477787829575")
-            resValue("string", "facebook_interstitial_ads_id", "220265255850830_400452651165422")
-            resValue("string", "facebook_native_ads_id", "220265255850830_400466974497323")
-            resValue("string", "facebook_video_native_ads_id", "220265255850830_609120000298685")
+            resValue("string", "facebook_banner_ads_id", "")
+            resValue("string", "facebook_interstitial_ads_id", "")
+            resValue("string", "facebook_native_ads_id", "")
+            resValue("string", "facebook_video_native_ads_id", "")
 
             resValue("string", "max_interstitial", "0e403e4c05a15cff")
             resValue("string", "max_banner", "917f542c62884a61")
@@ -66,15 +66,15 @@ android {
             resValue("string", "admob_ads_id", "ca-app-pub-7283749387189654~7391580023")
             resValue("string", "admob_banner_ads_id", "ca-app-pub-3940256099942544/6300978111")
             resValue("string", "admob_interstitial_ads_id", "ca-app-pub-3940256099942544/1033173712")
-            resValue("string", "admob_video_ads_id", "ca-app-pub-3940256099942544/8691691433")
+            resValue("string", "admob_video_ads_id", "")
             resValue("string", "admob_open_ads_id", "ca-app-pub-3940256099942544/3419835294")
             resValue("string", "admob_native_ads_id", "ca-app-pub-3940256099942544/2247696110")
             resValue("string", "admob_reward_ads_id", "ca-app-pub-3940256099942544/5224354917")
 
-            resValue("string", "facebook_banner_ads_id", "IMG_16_9_APP_INSTALL#220265255850830_400477787829575")
-            resValue("string", "facebook_interstitial_ads_id", "IMG_16_9_APP_INSTALL#220265255850830_400452651165422")
-            resValue("string", "facebook_native_ads_id", "IMG_16_9_APP_INSTALL#220265255850830_400466974497323")
-            resValue("string", "facebook_video_native_ads_id", "VID_HD_9_16_39S_LINK#220265255850830_609120000298685")
+            resValue("string", "facebook_banner_ads_id", "")
+            resValue("string", "facebook_interstitial_ads_id", "")
+            resValue("string", "facebook_native_ads_id", "")
+            resValue("string", "facebook_video_native_ads_id", "")
 
             resValue("string", "max_interstitial", "0e403e4c05a15cff")
             resValue("string", "max_banner", "917f542c62884a61")

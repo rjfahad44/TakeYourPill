@@ -14,8 +14,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.ft.ltd.takeyourpill.R
 import com.ft.ltd.takeyourpill.activity.AboutActivity
 import com.ft.ltd.takeyourpill.activity.WebActivity
+import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.IS_HTML_TEXT
 import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.TITLE
 import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.URL
+import com.ft.ltd.takeyourpill.activity.WebActivity.Companion.privacyPoliciesHtmlText
 import com.ft.ltd.takeyourpill.utils.Prefs
 import com.ft.ltd.takeyourpill.utils.Utils
 import com.ft.ltd.takeyourpill.viewmodel.PreferencesViewModel
@@ -72,7 +74,8 @@ class PreferencesFragment : PreferenceFragmentCompat() {
         findPreference<Preference>("privacyPolicy")?.setOnPreferenceClickListener {
             val intent = Intent(requireActivity(), WebActivity::class.java)
             intent.putExtra(TITLE, requireContext().getString(R.string.privacy_policy))
-            intent.putExtra(URL, requireContext().getString(R.string.privacy_policy_url))
+            intent.putExtra(URL, privacyPoliciesHtmlText)
+            intent.putExtra(IS_HTML_TEXT,true)
             startActivity(intent)
             true
         }
