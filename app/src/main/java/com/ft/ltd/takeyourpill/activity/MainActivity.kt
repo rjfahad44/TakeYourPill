@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 //permission granted
-                toast("Permission granted ((;")
+                //toast("Permission granted ((;")
             } else {
                 //permission denied
                 toast("Permission denied (:")

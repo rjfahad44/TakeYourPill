@@ -141,7 +141,7 @@ class WebActivity : AppCompatActivity() {
                 "\n" +
                 "    <h1>Privacy Policy for TakeYourPill App</h1>\n" +
                 "\n" +
-                "    <p><strong>Last updated:</strong> 02/01/2024 (dd/mm/yyyy)</p>\n" +
+                "    <p><strong>Last updated:</strong> 10/01/2024 (dd/mm/yyyy)</p>\n" +
                 "\n" +
                 "    <p>This Privacy Policy explains how [Your Company Name] (\"we,\" \"us,\" or \"our\") collects, uses, shares, and protects user information obtained through the TakeYourPill mobile application (the \"App\").</p>\n" +
                 "\n" +

@@ -74,8 +74,9 @@ class PreferencesFragment : PreferenceFragmentCompat() {
         findPreference<Preference>("privacyPolicy")?.setOnPreferenceClickListener {
             val intent = Intent(requireActivity(), WebActivity::class.java)
             intent.putExtra(TITLE, requireContext().getString(R.string.privacy_policy))
-            intent.putExtra(URL, privacyPoliciesHtmlText)
-            intent.putExtra(IS_HTML_TEXT,true)
+            //intent.putExtra(URL, privacyPoliciesHtmlText)
+            intent.putExtra(URL, requireContext().getString(R.string.privacy_policy_url))
+            intent.putExtra(IS_HTML_TEXT, false)
             startActivity(intent)
             true
         }
