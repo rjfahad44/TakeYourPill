@@ -19,7 +19,7 @@ android {
         applicationId = "com.ft.ltd.takeyourpill"
         minSdk = 24
         targetSdk = 34
-        versionCode = 4
+        versionCode = 5
         versionName = "v1.1"
 
         vectorDrawables.useSupportLibrary = true
